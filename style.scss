@@ -1,0 +1,241 @@
+/*
+Theme Name: Biblioteca Digital
+Theme URI: https://wordpress.org/themes/twentytwentythree
+Author: the WordPress team
+Author URI: https://wordpress.org
+Description: Twenty Twenty-Three is designed to take advantage of the new design tools introduced in WordPress 6.1. With a clean, blank base as a starting point, this default theme includes ten diverse style variations created by members of the WordPress community. Whether you want to build a complex or incredibly simple website, you can do it quickly and intuitively through the bundled styles or dive into creation and full customization yourself.
+Requires at least: 6.1
+Tested up to: 6.1
+Requires PHP: 5.6
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Text Domain: twentytwentythree
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, accessibility-ready, blog, portfolio, news
+*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+* {
+    font-family: "Open Sans", sans-serif;
+}
+
+.interativo-modal {
+    .btn-close {
+        right: 36px;
+        top: 36px;
+        width: 12px;
+        height: 12px;
+        color: #008dd4;
+    }
+
+    .modal-title {
+        font-weight: 700;
+        font-size: 32px;
+    }
+
+    p {
+        color: #5c6471;
+    }
+
+    .modal-body {
+        margin: 64px;
+    }
+
+    .modal-dialog,
+    .modal-content {
+        max-width: 750px;
+    }
+
+    .interativo-capa {
+        height: 320px;
+        width: 240px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2), 6px 6px 15px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+        background-color: #008dd4;
+        color: white;
+        font-weight: 500;
+        gap: 5px;
+    }
+}
+
+.navbar {
+    border-bottom: 1px solid #ebebeb;
+
+    .nav-link {
+        border: none !important;
+        padding: 1em 2em 1em 2em;
+        border-radius: 0 !important;
+        font-weight: 600;
+        font-size: 18px;
+        color: #a5adbb;
+    }
+
+    .nav-link.active {
+        background: #e2f3ff !important;
+        border-bottom: 2px solid #008dd4 !important;
+        font-weight: 700;
+        color: #008dd4 !important;
+    }
+}
+
+.search {
+    .input-group-text {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        background-color: white;
+        border-right: none;
+    }
+
+    .form-control {
+        border-left: none;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        font-size: 18px;
+    }
+
+    .form-control::placeholder {
+        font-weight: 600;
+        font-size: 18px;
+        color: #a5adbb;
+    }
+}
+
+.card {
+    background: #e2f3ff;
+    border: none;
+    padding: 0;
+
+    .card-body {
+        padding: 8px;
+    }
+
+    .card-title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #262626;
+    }
+
+    .card-img {
+        aspect-ratio: 25 / 20;
+        object-fit: cover;
+    }
+
+    &:hover {
+        box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2), 6px 6px 15px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .card-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.card-biologia {
+    background-color: hsl(76, 66%, 83%);
+}
+
+.card-geografia {
+    background-color: hsla(32, 100%, 83%, 1);
+}
+
+.categoria {
+    border-radius: 16px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    svg {
+        height: 40px;
+        opacity: 0.5;
+    }
+
+    h4 {
+        color: white;
+    }
+}
+
+.categoria-1 {
+    background-color: #ff8a00;
+}
+
+.categoria-2 {
+    background-color: #a0c044;
+}
+
+.categoria-3 {
+    background-color: #008dd4;
+}
+
+.categoria-4 {
+    background-color: #cb579e;
+}
+
+.categoria-5 {
+    background-color: #02bead;
+}
+
+.categoria-6 {
+    background-color: #a5adbb;
+}
+
+.videoaula {
+    border-radius: 16px;
+    aspect-ratio: 13 / 21;
+    padding: 36px 20px;
+
+    h1 {
+        font-weight: 700;
+        color: white;
+    }
+
+    svg {
+        width: 64px;
+        height: 64px;
+        opacity: 0.25;
+    }
+}
+
+.videoaula-modal {
+    .modal-dialog {
+        max-width: none;
+        width: fit-content;
+    }
+}
+
+.carousel-indicators {
+    position: relative;
+}
+
+.carousel-indicators {
+    .btn {
+        text-indent: unset;
+
+        width: 36px;
+        height: 38px;
+        border: none;
+        border-radius: 8px;
+        color: #036b8a;
+        font-weight: 600;
+        transition: all 0.25s ease;
+        &.active,
+        &:hover {
+            background-color: #E2F3FF;
+        }
+    }
+}
