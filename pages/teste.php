@@ -11,13 +11,16 @@ $imp_query = new WP_Query([
 
 $impressos = $imp_query->get_posts();
 
-$max_num_pages = ceil($imp_query->found_posts / $posts_per_page);
+$max_num_pages = ceil($imp_query->found_posts / 18);
 
 ?>
 
 <div id="Main" class="container">
+    <button class="btn voltar">
+        Voltar
+    </button>
     <div class="row">
-        <div class="col-2">
+        <div class="col">
             <div class="btn w-100 categoria categoria-1" data-type="impressos" data-category="biologia">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -29,7 +32,7 @@ $max_num_pages = ceil($imp_query->found_posts / $posts_per_page);
                 </h4>
             </div>
         </div>
-        <div class="col-2">
+        <div class="col">
             <div class="btn w-100 categoria categoria-2" data-type="impressos" data-category="geografia">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <title>earth</title>
@@ -41,8 +44,8 @@ $max_num_pages = ceil($imp_query->found_posts / $posts_per_page);
                 </h4>
             </div>
         </div>
-        <div class="col-2">
-            <div class="categoria categoria-3">
+        <div class="col">
+            <div class="btn w-100 categoria categoria-3" data-type="impressos" data-category="matematica">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke="#000" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -54,8 +57,8 @@ $max_num_pages = ceil($imp_query->found_posts / $posts_per_page);
                 </h4>
             </div>
         </div>
-        <div class="col-2">
-            <div class="categoria categoria-4">
+        <div class="col">
+            <div class="btn w-100 categoria categoria-4" data-type="impressos" data-category="fisica">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <title>atom</title>
                     <path
@@ -66,8 +69,8 @@ $max_num_pages = ceil($imp_query->found_posts / $posts_per_page);
                 </h4>
             </div>
         </div>
-        <div class="col-2">
-            <div class="categoria categoria-5">
+        <div class="col">
+            <div class="btn w-100 categoria categoria-5" data-type="impressos" data-category="quimica">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
                     <path
                         d="M8.6 42q-2.1 0-2.975-1.95T6.2 36.5l12.4-14V9H16q-.65 0-1.075-.425Q14.5 8.15 14.5 7.5q0-.65.425-1.075Q15.35 6 16 6h16q.65 0 1.075.425.425.425.425 1.075 0 .65-.425 1.075Q32.65 9 32 9h-2.6v13.5l12.4 14q1.45 1.6.575 3.55Q41.5 42 39.4 42ZM8 39h32L26.4 23.6V9h-4.8v14.6Zm15.9-15Z" />
@@ -77,8 +80,8 @@ $max_num_pages = ceil($imp_query->found_posts / $posts_per_page);
                 </h4>
             </div>
         </div>
-        <div class="col-2">
-            <div class="categoria categoria-6">
+        <div class="col">
+            <div class="btn w-100 categoria categoria-6" data-type="impressos" data-category="interdisciplinares">
                 <svg viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg'
                     xmlns:xlink='http://www.w3.org/1999/xlink'>
                     <title>book_5_line</title>
@@ -116,8 +119,9 @@ $max_num_pages = ceil($imp_query->found_posts / $posts_per_page);
                         ?>" alt="">
                 </span>
             </div>
-            <input type="text" class="form-control rounded-pill" placeholder="Busque o livro que procura"
-                aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $imp_search ?>">
+            <input class="imp-input" value="">
+            <input type="text" class="imp-busca form-control rounded-pill" placeholder="Busque o livro que procura"
+                aria-label="Username" aria-describedby="basic-addon1" value="">
         </div>
     </div>
     <div id="carouselImpressos" class="carousel carousel-impressos">

@@ -34,18 +34,29 @@ if (!is_admin()) {
 
 $posts_per_page = 18;
 
+add_filter( 'posts_where', 'title_like_posts_where', 10, 2 );
+function title_like_posts_where( $where, $wp_query ) {
+    global $wpdb;
+    if ( $post_title_like = $wp_query->get( 'post_title_like' ) ) {
+        $where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'%' . esc_sql( $wpdb->esc_like( $post_title_like ) ) . '%\'';
+    }
+    return $where;
+}
+
 function filter_projects()
 {
     global $impressos, $imp_query, $max_num_pages, $posts_per_page;
 
     $cat = $_POST['category'];
     $type = $_POST['type'];
+    $search = $_POST['search'];
     
     $imp_query = new WP_Query([
         'post_type' => $type,
         'posts_per_page' => -1,
         'category_name' => $cat,
         'order' => 'desc',
+        'post_title_like' => $search
     ]);
 
     $response = '';

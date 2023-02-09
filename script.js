@@ -16,8 +16,18 @@ jQuery(document).ready(function ($) {
 
     $('.btn.categoria').on('click', function () {
         // $('.carousel-' + $(this).data('type')).remove();
-        var type = $(this).data('type');
-        var cat = $(this).data('category');
+        //$('.btn.categoria').not($(this)).parent().hide();
+
+        $('.imp-input').val($(this).data('category')).change();
+
+
+        //filter($(this));
+    });
+
+    function filter(t, c, s) {
+        var type = t;
+        var cat = c;
+        var search = s;
         $.ajax({
             type: 'POST',
             url: '/wp-admin/admin-ajax.php',
@@ -25,7 +35,8 @@ jQuery(document).ready(function ($) {
             data: {
                 action: 'filter_projects',
                 category: cat,
-                type: type
+                type: type,
+                search: search
             },
             success: function (res) {
                 $('.carousel-' + type).html(res);
@@ -34,5 +45,13 @@ jQuery(document).ready(function ($) {
                 console.log(err);
             }
         });
-    });
+    }
+
+    $('.imp-input').change(function () {
+        filter('impressos', $(this).val(), $('imp-busca').val());
+    })
+
+    $('.imp-busca').change(function () {
+        filter('impressos', $('.imp-input').val(), $(this).val());
+    })
 });

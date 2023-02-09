@@ -209,4 +209,9 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
   background-color: #E2F3FF;
 }
 
+.imp-input {
+  visibility: hidden;
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
