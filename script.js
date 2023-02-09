@@ -14,14 +14,26 @@ jQuery(document).ready(function ($) {
         $('video').trigger('pause');
     });
 
-    $('.btn.categoria').on('click', function () {
-        // $('.carousel-' + $(this).data('type')).remove();
-        //$('.btn.categoria').not($(this)).parent().hide();
+    $('.imp-voltar').hide();
+
+    $('.btn-categoria').on('click', function () {
+        $('.imp-voltar').show();
+
+        $('.categorias-titulo').hide();
+
+        $('.btn-categoria').not($(this)).parent().hide();
 
         $('.imp-input').val($(this).data('category')).change();
+    });
 
+    $('.imp-voltar').on('click', function () {
+        $('.imp-voltar').hide();
 
-        //filter($(this));
+        $('.categorias-titulo').show();
+
+        $('.btn-categoria').parent().show();
+
+        $('.imp-input').val($(this).data('')).change();
     });
 
     function filter(t, c, s) {

@@ -148,7 +148,7 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     background-color: hsla(32, 100%, 83%, 1);
 }
 
-.categoria {
+.btn-categoria {
     border-radius: 16px;
     padding-top: 1em;
     padding-bottom: 1em;
@@ -168,10 +168,15 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     h4 {
         color: white;
     }
+
 }
 
 .categoria-2 {
     background-color: #ff8a00;
+
+    &:hover{
+        background-color: #ff8a00;
+    }
 }
 
 .categoria-1 {
